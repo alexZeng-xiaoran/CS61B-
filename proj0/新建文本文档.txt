@@ -1,0 +1,26 @@
+ public static void main(String[] args) {
+        enableDoubleBuffering();
+        double time=0;
+        double numPlanet=0;
+        double T;
+        double[] xForce;
+        double[] yForce;
+        String filePath=args[2];
+        Planet[] allPlanets;
+
+        while(time<=T){
+            allPlanets=readPlanets(filePath);
+            numPlanet=allPlanets.length;
+            xForce=new double[numPlanet];
+            yForce=new double[numPlanet];
+            for(int i=0;i<numPlanet;i++){
+                /*
+                * calculate the net x-force and y-force for i-th planet
+                * */
+                for(int j=0;j!=i&&j<numPlanet;j++){
+
+                }
+            }
+            time+=
+        }
+    }
