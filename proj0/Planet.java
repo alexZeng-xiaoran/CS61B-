@@ -95,7 +95,6 @@ public class Planet{
     public void draw(){
         double x=this.xxPos;
         double y=this.yyPos;
-        System.out.println(this.imgFileName);
         StdDraw.picture(x,y,"images/"+this.imgFileName);
     }
 }

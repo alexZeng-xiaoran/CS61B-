@@ -14,9 +14,7 @@ public class NBody{
         In in=new In(filePath);
         int numPlanets=in.readInt();
         in.readDouble();
-        System.out.println(numPlanets);
         Planet[] allPlanets=new Planet[numPlanets];
-        System.out.println(allPlanets);
         for(int i=0;i<numPlanets;i++){
             if(!in.isEmpty()){
                 allPlanets[i]=new Planet();
