@@ -1,13 +1,10 @@
-class Planet{
-    double xxPos;
-    double yyPos;
-    double xxVel;
-    double yyVel;
-    double mass;
-    String imgFileName;
-
-    public Planet() {
-    }
+public class Planet{
+    private double xxPos;
+    private double yyPos;
+    private double xxVel;
+    private double yyVel;
+    private double mass;
+    private String imgFileName;
 
     public Planet(double xP, double yP, double xV, double yV, double m, String img) {
         this.xxPos = xP;
@@ -55,7 +52,7 @@ class Planet{
         double forceY=dy*force/distance;
         return forceY;
     }
-    public boolean equal(Planet p){
+    private boolean equal(Planet p){
         if(this.xxPos==p.xxPos &&  this.yyPos==p.yyPos){
             return true;
         }else{

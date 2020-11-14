@@ -1,5 +1,8 @@
+public class NBody{
+    public NBody() {
 
-class NBody{
+    }
+
     public static double readRadius(String filePath){
         In in=new In(filePath);
         in.readInt();
@@ -27,7 +30,10 @@ class NBody{
         }
         return allPlanets;
     }
-    //how to draw the planet and the background
+
+    /**
+     * the method to draw the planet and the background
+     */
 //    public static void main(String[] args) {
 //        double T=Double.valueOf(args[0]);
 //        double dt=Double.valueOf(args[1]);
@@ -46,10 +52,8 @@ class NBody{
 //        for(int i=0;i<allPlanets.length;i++){
 //            allPlanets[i].draw();
 //        }
-//
-//
 //    }
-    //中文
+
 
     public static void main(String[] args) {
         StdDraw.enableDoubleBuffering();
@@ -67,31 +71,24 @@ class NBody{
         while(time<=T){
 
             for(int i=0;i<allPlanets.length;i++){
-
-/*                for(int j=0;j<allPlanets.length;j++){
-                    xForce=allPlanets[i].calcForceExertedByX(allPlanets[j]);
-                    System.out.println("xForce:"+xForce);
-                    xForces[i]+=xForce;
-                    yForce=allPlanets[i].calcForceExertedByY(allPlanets[j]);
-                    System.out.println("yForce:"+yForce);
-                    yForces[i]+=yForce;
-                }*/
                 xForces[i]=allPlanets[i].calcNetForceExertedByX(allPlanets);
                 yForces[i]=allPlanets[i].calcNetForceExertedByY(allPlanets);
             }
+            /*
+            * the following commited code is to print the xForces and yForces because it can help me to debug the code
+            * */
 
-            //print the xForces and yForces
-            System.out.print("xForces:");
-            for(int i=0;i<allPlanets.length;i++){
-                System.out.print(xForces[i]+' ');
-            }
-            System.out.println();
-
-            System.out.print("yForces:");
-            for(int i=0;i<allPlanets.length;i++){
-                System.out.print(yForces[i]+' ');
-            }
-            System.out.println();
+//            System.out.print("xForces:");
+//            for(int i=0;i<allPlanets.length;i++){
+//                System.out.print(xForces[i]+' ');
+//            }
+//            System.out.println();
+//
+//            System.out.print("yForces:");
+//            for(int i=0;i<allPlanets.length;i++){
+//                System.out.print(yForces[i]+' ');
+//            }
+//            System.out.println();
 
             for(int i=0;i<allPlanets.length;i++){
                 allPlanets[i].update(dt,xForces[i],yForces[i]);
